@@ -1,0 +1,25 @@
+{{ partial "header.html" . }}
+
+{{ partial "sidebar.html" . }}
+<!-- <div class="large-3 column">
+	
+</div> -->
+
+<section class="large-6 column ">  
+        <p class="article-info">
+        autor: <strong><a href={{ .Site.Params.email}} >{{ .Site.Author.name }}</a></strong> 
+        </p>
+    <div class="text-justify">
+    {{ .Content }}
+    	
+    </div>
+    
+    <p class='article-info'>
+    tags: {{ .Keywords}} | em breve com os links |
+    </p>
+</section>
+
+<div class='large-3 column'>
+    
+</div>
+{{ partial "footer.html" . }}

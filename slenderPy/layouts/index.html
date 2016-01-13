@@ -1,0 +1,33 @@
+{{ partial "header.html" . }}
+
+{{ partial "sidebar.html" . }} 
+
+
+
+<!-- <section id="article-listing"> -->
+<section class='large-6 column'>
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+    {{ range $paginator.Pages }}
+    <hr>
+    <article>
+        <center>
+            <h1 class="article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+            <p class="article-description"><em>{{ .Description}}</em></p>
+        </center>
+        <p class="article-info">
+        Autor: <strong><a href={{ .Site.Params.email}} >{{ .Site.Author.name }}</a></strong>
+        </p>
+        <p class="article-summary">{{ .Summary }}</p>
+        {{ if .Truncated }}<a href="{{ .Permalink }}"><p ><a href="{{ .Permalink }}" class="button-tiny">Read more &rarr;</a></p>{{ end }}
+    </article>
+    <hr>
+    {{ end }}
+    {{ template "_internal/pagination.html" . }}
+
+</section>
+
+<div class='large-3 column'>
+    
+</div>
+
+{{ partial "footer.html" . }}

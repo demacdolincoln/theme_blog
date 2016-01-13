@@ -1,0 +1,31 @@
+<section id='left-bar' class='side-nav large-3 column left-bar'>
+ <p>Archives:</p>
+    {{ $prevYear := "" }}
+    {{ $pages := .Data.Pages }}
+    <ul  >
+    {{ range $index, $page := .Data.Pages }}
+
+        {{ if eq .Type "post" }}
+
+        {{ if eq $index 0 }}
+        <p>{{ dateFormat "2006" .Date }}</p>
+        
+        {{ else }}
+            {{ $prev := (sub $index 1) }}
+            {{ $prevYear := (index $pages $prev).Date | dateFormat "2006" }}
+            {{ $curYear := (dateFormat "2006" .Date) }}
+
+            {{ if ne $prevYear $curYear }}
+                </ul>
+                <ul >
+                <p>{{ dateFormat "2006" .Date }}</p>
+            {{ end }}
+        {{ end }}
+
+
+            <li ><a href="{{ .Permalink}}">{{ .Title}}</a></li>
+
+        {{ end }}
+    {{ end }}
+</ul>  
+</section>

@@ -1,0 +1,17 @@
+# theme.toml
+
+name = "SlenderPy"
+license = "MIT"
+licenselink = "https://github.com/CrimsonRay/slender/blob/master/LICENSE.md"
+description = "Minimalist theme for Hugo with base16 color schemes."
+homepage = "https://crimsonray.github.io/slender/"
+tags = ["dicas", "artigos", "tutoriais"]
+features = ["blog"]
+min_version = 0.14
+
+[author]
+	name = "Lincoln de Macêdo"
+
+[original]
+  name = "CrimsonRay"
+  homepage = "https://github.com/CrimsonRay/"
